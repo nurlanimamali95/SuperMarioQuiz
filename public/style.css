@@ -1,3 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html,body{
+  font-family: 'Press Start 2P', cursive;
+}
+
+body{
+  background-color: #FADAB4;
+}
+
 .centered {
   position: absolute;
   top: 50%;
@@ -19,11 +32,7 @@ ul {
 
 /* basic styles for Input name */
 
-.name-label {
-  display: block;
-  margin-bottom: 1rem;
-  font-size: 1em;
-}
+
 
 .name-input {
   display: block;
@@ -86,5 +95,76 @@ li:hover {
 .no {
   background-color: rgb(228, 56, 56)
 }
+
+
+/* Welcome page */
+
+.welcome-page-div{
+  width: 700px;
+  height:350px;
+  background-color: rgb(248,184,96) ;
+  border: 3px solid rgb(141,73,38);
+  border-radius: 20px;
+  position: relative;
+}
+
+.welcome-page-heading{
+  font-size: 70px;
+  padding: 80px;
+  padding-bottom: 50px;
+}
+
+.name-label {
+  font-size: 20px;
+}
+
+.name-input{
+  position: absolute;
+  left: 230px;
+  margin-top: 40px;
+  width: 250px;
+  height: 50px;
+  border: 2px solid;
+  border-radius: 10px;
+  caret-color: red;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.name-input:focus{
+  font-family: 'Press Start 2P', cursive;
+}
+
+.button-style{
+  background-color: rgb(141,73,38);
+  font-family: 'Press Start 2P', cursive;
+  width: 180px;
+  height: 50px;
+  position: absolute;
+  left: 230px;
+  top: 350px;
+  border-radius: 20px;
+  border: 3px solid (141,73,38);
+}
+
+.toad{
+  width: 90px;
+  position: absolute;
+  top: 360px;
+  left: 410px;
+  z-index: -1000;
+}
+
+.toad1{
+  width: 90px;
+  position: absolute;
+  top: 360px;
+  left: 190px;
+  z-index: -1000;
+}
+
+/* Question pages */
+
+
+/* The End page */
 
 

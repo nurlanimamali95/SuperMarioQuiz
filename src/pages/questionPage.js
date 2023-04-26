@@ -52,7 +52,7 @@ export const initQuestionPage = () => {
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
   
-  // Flag for not selecting two items
+  // Flag for not selecting two items and also counting the score
   quizData.answerSelected = false;
 };
 
@@ -70,6 +70,7 @@ const selectAnswer = (event) => {
 
     if (userAnswer === correctAnswerKey) {
      selectedListItem.classList.add('yes')
+     quizData.score+=10
     } else {
      selectedListItem.classList.add('no')
      showCorrectAnswer()
@@ -101,12 +102,23 @@ const nextQuestion = () => {
 
     const userName = getUserName();
 
+    const totalPoints = 100;
+
     const finalMessage = document.createElement('div');
-    finalMessage.innerText = `Well done, ${userName}! You earned ${quizData.score} points.`;
+
+    // different text depending on a score
+
+    if(quizData.score < 30){
+      finalMessage.innerText = `Better luck next time, ${userName}. You earned ${quizData.score} points out of ${totalPoints} possible points`
+    } else if (quizData.score >= 30 && quizData.score <= 70) {
+      finalMessage.innerText = `Good job, ${userName}! You earned ${quizData.score} points out of ${totalPoints} possible points.`;
+    } else {
+      finalMessage.innerText = `Well done, ${userName}! You earned ${quizData.score} points out of ${totalPoints} possible points.`;
+    }
 
     // New Game button
 
-     const newGameButton = document.createElement('button');
+    const newGameButton = document.createElement('button');
     newGameButton.innerText = 'New Game';
     newGameButton.addEventListener('click', startNewGame);
     newGameButton.classList.add("button-style")
