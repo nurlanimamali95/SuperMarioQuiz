@@ -178,7 +178,7 @@ export const quizData = {
       text: 'What country does this flag belong to?',
       answers: {
         a: 'Bermuda Islands',
-        b: 'South Georgia',
+        b: 'South Georgia and South Sandwich Islands',
         c: 'State of Hawaii',
         d: "The Cayman Islands",
       },

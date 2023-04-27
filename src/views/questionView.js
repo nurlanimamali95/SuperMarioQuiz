@@ -1,6 +1,7 @@
 import { ANSWERS_LIST_ID } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { PROGRESS_BAR_ID } from '../constants.js';
+import { quizData } from '../data.js';
 
 /**
  * Create a full question element
@@ -9,7 +10,12 @@ import { PROGRESS_BAR_ID } from '../constants.js';
 export const createQuestionElement = (question, questionCounter, imageUrl) => {
   const element = document.createElement('div'); 
 
-  const questionImage = imageUrl ? `<img class="question-image" src="${imageUrl}" alt="Question image" />` : '';
+  //check if the current question has an image
+
+  let imageElement = '';
+  if (quizData.questions[quizData.currentQuestionIndex].image) {
+    imageElement = `<img src="${quizData.questions[quizData.currentQuestionIndex].image}" width="200">`;
+  }
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
@@ -28,6 +34,7 @@ export const createQuestionElement = (question, questionCounter, imageUrl) => {
       <div class="question-image-container">
         ${questionImage}
         <h1 class="question">${question}</h1>
+        ${imageElement}
      </div>
     <ul id="${ANSWERS_LIST_ID}">
     </ul>

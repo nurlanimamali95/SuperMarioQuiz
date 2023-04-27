@@ -6,8 +6,8 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
-import { getUserName } from './welcomePage.js';
 import { changeProgress } from '../views/progressBar.js';
+import { showFinalPage } from './finalPage.js';
 
 
 export const initQuestionPage = () => {
@@ -45,7 +45,7 @@ export const initQuestionPage = () => {
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
   
-  // Flag for not selecting two items
+  // Flag for not selecting two items and also counting the score
   quizData.answerSelected = false;
 };
 
@@ -65,6 +65,7 @@ const selectAnswer = (event) => {
 
     if (userAnswer === correctAnswerKey) {
      selectedListItem.classList.add('yes')
+     quizData.score+=10
      happyMario.classList.add('hello-happy-mario')
     } else {
      selectedListItem.classList.add('no')
@@ -95,35 +96,9 @@ const showCorrectAnswer = () => {
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
-  // After the last question it shows the name of the User and scores
-
   if (quizData.currentQuestionIndex === quizData.questions.length) {
-    const userInterface = document.getElementById(USER_INTERFACE_ID);
-    userInterface.innerHTML = '';
-
-    const userName = getUserName();
-
-    const finalMessage = document.createElement('div');
-    finalMessage.innerText = `Well done, ${userName}! You earned ${quizData.score} points.`;
-
-    // New Game button
-
-     const newGameButton = document.createElement('button');
-    newGameButton.innerText = 'New Game';
-    newGameButton.addEventListener('click', startNewGame);
-    newGameButton.classList.add("button-style")
-    finalMessage.appendChild(newGameButton);
-
-
-    userInterface.appendChild(finalMessage);
+   showFinalPage()
   } else {
     initQuestionPage();
   }
-};
-
-const startNewGame = () => {
-  // Reset the quiz data and start a new game
-  quizData.currentQuestionIndex = 0;
-  quizData.score = 0;
-  initQuestionPage();
 };
