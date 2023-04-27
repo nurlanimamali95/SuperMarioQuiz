@@ -1,7 +1,6 @@
 import { ANSWERS_LIST_ID } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
-// import { PROGRESS_BAR_ID } from '../constants.js';
-
+import { PROGRESS_BAR_ID } from '../constants.js';
 
 /**
  * Create a full question element
@@ -14,6 +13,9 @@ export const createQuestionElement = (question, questionCounter) => {
   element.innerHTML = String.raw`
     <div class="status-bar">
     <h3>${questionCounter}/10</h3>  
+    <div class="progress-container">
+    <div id="${PROGRESS_BAR_ID}"></div>
+    </div>
     <div class="points-container">
       <div class="image-container"></div>
       <div class="points">${100}</div>
