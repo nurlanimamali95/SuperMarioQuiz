@@ -1,6 +1,7 @@
 import { USER_INTERFACE_ID } from '../constants.js';
 import { quizData } from '../data.js';
 import { getUserName } from './welcomePage.js';
+import { initQuestionPage } from './questionPage.js';
 
 export const showFinalPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
