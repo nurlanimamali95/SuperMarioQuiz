@@ -9,6 +9,7 @@ import { quizData } from '../data.js';
 import { changeProgress } from '../views/progressBar.js';
 import { showFinalPage } from './finalPage.js';
 
+
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -16,7 +17,8 @@ export const initQuestionPage = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
 
-  const questionElement = createQuestionElement(currentQuestion.text, quizData.currentQuestionIndex + 1);
+  const questionElement = createQuestionElement(currentQuestion.text, quizData.currentQuestionIndex + 1, currentQuestion.image);
+
 
   correctAnswerKey = currentQuestion.correct;
   
@@ -37,16 +39,7 @@ export const initQuestionPage = () => {
   .getElementById(NEXT_QUESTION_BUTTON_ID)
   .setAttribute('disabled', true)
 
-  // Add event listener to the button
-  document
-
-  .getElementById(NEXT_QUESTION_BUTTON_ID)
-  .removeAttribute('disabled')
-
-  document
-  .getElementById(NEXT_QUESTION_BUTTON_ID)
-  .addEventListener('click', nextQuestion);
-
+  
   const currentBar = changeProgress((quizData.currentQuestionIndex * 10)+10); // Progressbar line
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
@@ -65,16 +58,26 @@ const selectAnswer = (event) => {
   
     const selectedListItem = event.target;
     const userAnswer = selectedListItem.dataset.key;
+    const happyMario = document.querySelector('.happy-mario')
+    const sadMario = document.querySelector('.sad-mario')
 
     quizData.answerSelected = true;
 
     if (userAnswer === correctAnswerKey) {
      selectedListItem.classList.add('yes')
      quizData.score+=10
+     happyMario.classList.add('hello-happy-mario')
     } else {
      selectedListItem.classList.add('no')
+     sadMario.classList.add('hello-sad-mario')
+     
      showCorrectAnswer()
     }
+    
+    document
+    .getElementById(NEXT_QUESTION_BUTTON_ID)
+    .removeAttribute('disabled')
+  
 };
 
 const showCorrectAnswer = () => {
@@ -88,7 +91,6 @@ const showCorrectAnswer = () => {
       answerElement.classList.add('yes');
     }
   });
-
 };
 
 const nextQuestion = () => {
