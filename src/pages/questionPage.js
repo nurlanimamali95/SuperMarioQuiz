@@ -17,7 +17,8 @@ export const initQuestionPage = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
 
-  const questionElement = createQuestionElement(currentQuestion.text, quizData.currentQuestionIndex + 1);
+  const questionElement = createQuestionElement(currentQuestion.text, quizData.currentQuestionIndex + 1, currentQuestion.image);
+
 
   correctAnswerKey = currentQuestion.correct;
   
@@ -57,13 +58,18 @@ const selectAnswer = (event) => {
   
     const selectedListItem = event.target;
     const userAnswer = selectedListItem.dataset.key;
+    const happyMario = document.querySelector('.happy-mario')
+    const sadMario = document.querySelector('.sad-mario')
 
     quizData.answerSelected = true;
 
     if (userAnswer === correctAnswerKey) {
      selectedListItem.classList.add('yes')
+     happyMario.classList.add('hello-happy-mario')
     } else {
      selectedListItem.classList.add('no')
+     sadMario.classList.add('hello-sad-mario')
+     
      showCorrectAnswer()
     }
     
