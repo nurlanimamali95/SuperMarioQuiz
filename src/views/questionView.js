@@ -32,7 +32,7 @@ export const createQuestionElement = (question, questionCounter, imageUrl) => {
     </div>
     <div class="main-container">
       <div class="question-image-container">
-        ${questionImage}
+
         <h1 class="question">${question}</h1>
         ${imageElement}
      </div>

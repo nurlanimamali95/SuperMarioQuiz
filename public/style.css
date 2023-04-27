@@ -396,8 +396,6 @@ ul {
 }
 
 .name-input{
-  position: absolute;
-  left: 230px;
   margin-top: 40px;
   width: 250px;
   height: 50px;
