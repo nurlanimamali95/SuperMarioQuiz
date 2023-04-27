@@ -62,11 +62,9 @@ li:hover {
 .button-style{
   background-color: var(--light-brown);
   font-family: 'Press Start 2P', cursive;
+  margin-top: 50px;
   width: 180px;
-  height: 50px; 
-  position: absolute;
-  left: 230px;
-  top: 350px;
+  height: 50px;
   border-radius: 10px;
   border: 3px solid (141,73,38);
 }
@@ -92,27 +90,21 @@ li:hover {
 
 /* WELCOME PAGE  */
 
-.name-input {
-  display: block;
-  margin-top: 2em;
-  padding: 0.5em;
-  border: 1px solid var(--white);
-  border-radius: 1em;
-}
-
 .welcome-page-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
   width: 700px;
   height:350px;
   background-color: var(--beige) ;
   border: 3px solid var(--light-brown);
   border-radius: 20px;
-  position: relative;
 }
 
 .welcome-page-heading{
   font-size: 70px;
-  padding: 80px;
-  padding-bottom: 50px;
 }
 
 .name-label {
@@ -120,9 +112,6 @@ li:hover {
 }
 
 .name-input{
-  position: absolute;
-  left: 230px;
-  margin-top: 40px;
   width: 250px;
   height: 50px;
   border: 2px solid;
@@ -135,20 +124,28 @@ li:hover {
   font-family: 'Press Start 2P', cursive;
 }
 
-.toad{
-  width: 90px;
-  position: absolute;
-  top: 360px;
-  left: 410px;
-  z-index: -1000;
+.button-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.toad1{
-  width: 90px;
-  position: absolute;
-  top: 360px;
-  left: 190px;
+
+.toad{
+  order: -1;
+  width: 120px;
   z-index: -1000;
+  margin-right: -35px;
+  margin-top: 30px;
+}
+
+/* One of the toads has to be flipped horizontally */
+
+.toad1{
+  width: 120px;
+  z-index: -1000;
+  margin-left: -35px;
+  margin-top: 30px;
 }
 
 /* QUESTION PAGE */
