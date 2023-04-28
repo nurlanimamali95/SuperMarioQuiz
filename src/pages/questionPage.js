@@ -7,27 +7,11 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
-import { changeProgress } from '../views/progressBar.js';
+import { changeProgress, createProgressBarElement} from '../views/progressBar.js';
 import { showFinalPage } from './finalPage.js';
 import { showInformation } from '../views/informationViev.js';
 
-const createProgressBarElement = () => {
-  const existingProgressBar = document.getElementById(PROGRESS_BAR_ID);
-  if (existingProgressBar) {
-    // Progress bar already exists, do nothing
-    return;
-  }
-  // create a new div element
-  const divBar = document.createElement('div');
-  divBar.className = "progress-container";
-  divBar.innerHTML = String.raw`<div id="${PROGRESS_BAR_ID}"></div>`;
-
-  // append the div element to the body
-
-  // I commented out the following line since it was added in the wrong spot. How might 
-  // you modify progressBar.js so you don't need to create the div here?
-  // document.body.appendChild(divBar);
-};
+const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
 export const initQuestionPage = () => {
 
@@ -35,8 +19,6 @@ export const initQuestionPage = () => {
   
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
-
-  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
  
   const questionElement = createQuestionElement(currentQuestion.text, quizData.currentQuestionIndex + 1, currentQuestion.image);
 
@@ -61,7 +43,8 @@ export const initQuestionPage = () => {
   .setAttribute('disabled', true)
 
   
-  // const currentBar = changeProgress((quizData.currentQuestionIndex * 10)+10); // Progressbar line
+  changeProgress(currentQuestion) // Progressbar line
+
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
