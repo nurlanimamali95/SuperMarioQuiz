@@ -73,7 +73,6 @@ const selectAnswer = (event) => {
     if (userAnswer === correctAnswerKey) {
      selectedListItem.classList.add('yes');
      quizData.score+=10;
-     updateScoreInProgressBar();
      happyMario.classList.add('hello-happy-mario');
     } else {
      selectedListItem.classList.add('no');
@@ -105,13 +104,13 @@ const showCorrectAnswer = () => {
   });
 };
 
-const updateScoreInProgressBar = () => {
-  const scoreNumElement = document.getElementById('score');
-  scoreNumElement.textContent = quizData.score;
+const updateQuestionNumInProgressBar = () => {
+  const questionNumElement = document.getElementById('questionNum');
+  questionNumElement.textContent = quizData.currentQuestionIndex + 1;
 }
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-
+  updateQuestionNumInProgressBar();
   if (quizData.currentQuestionIndex === quizData.questions.length) {
    showFinalPage()
   } else {

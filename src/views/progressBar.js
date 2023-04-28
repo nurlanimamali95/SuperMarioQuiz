@@ -12,7 +12,7 @@ export const changeProgress = (progress) => {
     const element = document.createElement('div');
     element.classList.add("status-bar");
     element.innerHTML = String.raw`
-      <h3><span id="score">#</span>/10</h3>  
+      <h3><span id="questionNum">1</span>/10</h3>  
       <div class="progress-container">
         <div id="${PROGRESS_BAR_ID}"></div>
       </div>
