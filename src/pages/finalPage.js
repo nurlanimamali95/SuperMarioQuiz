@@ -59,6 +59,7 @@ export const showFinalPage = () => {
   avatar3.src = './src/images/evghen.gif';
   avatar3.classList.add('avatar');
 
+
   userInterface.appendChild(superMarioTeam);
   superMarioTeam.appendChild(avatar1);
   superMarioTeam.appendChild(avatar2);
