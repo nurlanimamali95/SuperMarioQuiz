@@ -1,17 +1,14 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap');
 
 :root {
-  --background-color: #FADAB4;
+  --background-color: #fadab4;
   --white: #fff7ed;
-  --beige: #F8B860;
-  --light-brown: #8D4926;
+  --beige: #f8b860;
+  --light-brown: #8d4926;
   --dark-brown: #412010;
   --secondary-color: #6c757d;
   --positive-color: #1e87b0;
-  --negative-color: #E50014;
-
-
+  --negative-color: #e50014;
 }
 
 * {
@@ -27,7 +24,7 @@ body {
   background-color: var(--background-color);
   height: 100vh;
   overflow: hidden;
-  background-color: #FADAB4;
+  background-color: #fadab4;
 }
 
 html,
@@ -46,8 +43,6 @@ ul {
   flex-direction: column;
   gap: 1rem;
   cursor: pointer;
-  
-  
 }
 
 li {
@@ -70,26 +65,24 @@ li:hover {
   /* border-color: var(--white); */
 }
 
-
-.button-style{
+.button-style {
   background-color: var(--light-brown);
   font-family: 'Press Start 2P', cursive;
   margin-top: 50px;
   width: 180px;
   height: 50px;
   border-radius: 10px;
-  border: 3px solid (141,73,38);
+  border: 3px solid (141, 73, 38);
 }
-
 
 #next-question-button {
   /* background-color: var(--light-brown); */
-  background-color: #F8B860;
+  background-color: #f8b860;
   box-sizing: border-box;
   font-family: 'Press Start 2P', cursive;
   padding: 1.2rem 2.4rem;
   border-radius: 20px;
-  border: 3px solid (141,73,38);
+  border: 3px solid (141, 73, 38);
   margin-top: 2rem;
   cursor: pointer;
 }
@@ -97,67 +90,7 @@ li:hover {
 #next-question-button:hover {
   color: var(--white);
   transform: scale(1.02);
-   background-color: var(--light-brown);
-}
-
-/* WELCOME PAGE  */
-
-.welcome-page-div{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  margin: 0 auto;
-  width: 700px;
-  height:350px;
-  background-color: var(--beige) ;
-  border: 3px solid var(--light-brown);
-  border-radius: 20px;
-}
-
-.welcome-page-heading{
-  font-size: 70px;
-}
-
-.name-label {
-  font-size: 20px;
-}
-
-.name-input{
-  width: 250px;
-  height: 50px;
-  border: 2px solid;
-  border-radius: 10px;
-  caret-color: var(--negative-color);
-  font-family: 'Press Start 2P', cursive;
-}
-
-.name-input:focus{
-  font-family: 'Press Start 2P', cursive;
-}
-
-.button-div{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.toad{
-  order: -1;
-  width: 120px;
-  z-index: -1000;
-  margin-right: -35px;
-  margin-top: 30px;
-}
-
-/* One of the toads has to be flipped horizontally */
-
-.toad1{
-  width: 120px;
-  z-index: -1000;
-  margin-left: -35px;
-  margin-top: 30px;
+  background-color: var(--light-brown);
 }
 
 /* QUESTION PAGE */
@@ -184,28 +117,8 @@ li:hover {
   overflow: auto;
 }
 
-
 ul {
   list-style: none;
-}
-
-
-/* basic styles for Input name */
-
-.name-input {
-  display: block;
-  margin-top: 2em;
-  padding: 0.5em;
-  border: 1px solid #ccc;
-  border-radius: 1em;
-}
-
-.button-style {
-  width: 10em;
-  height: auto;
-  display: block;
-  margin-top: 2em;
-  margin-left: 2em;
 }
 
 * {
@@ -233,18 +146,17 @@ ul {
 
 /* MARIO PROGRESS */
 .progress-container #progress::after {
-  content: "";
+  content: '';
   display: block;
   width: 50px;
   height: 50px;
   position: absolute;
   top: -28px;
   right: -45px;
-  background-image: url("../public/mario_run.gif");
+  background-image: url('../public/mario_run.gif');
   background-size: contain;
   background-repeat: no-repeat;
 }
-
 
 .points-container {
   display: flex;
@@ -252,7 +164,6 @@ ul {
   align-items: center;
   gap: 1rem;
 }
-
 
 .points {
   margin-bottom: 2.2rem;
@@ -285,14 +196,13 @@ ul {
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  
 }
 
 .question-image {
   max-width: 260px;
   border-radius: 10px;
   border: 4px solid var(--dark-brown);
-  animation: image-slide .5s ease-in-out both;
+  animation: image-slide 0.5s ease-in-out both;
 }
 
 @keyframes image-slide {
@@ -309,9 +219,9 @@ ul {
 .question {
   font-family: 'Press Start 2P', cursive;
   font-size: 1.5rem;
-  letter-spacing: .3rem;
+  letter-spacing: 0.3rem;
   line-height: 2.2rem;
-  animation: animate .5s ease-in-out both;
+  animation: animate 0.5s ease-in-out both;
 }
 
 /* @keyframes animate {
@@ -344,7 +254,7 @@ ul {
 }
 
 .no {
-  background-color: var(--negative-color)
+  background-color: var(--negative-color);
 }
 
 .happy-mario {
@@ -357,7 +267,6 @@ ul {
   position: absolute;
   z-index: -1;
   display: none;
-  
 }
 
 .hello-happy-mario {
@@ -370,78 +279,9 @@ ul {
     left: 80%;
   }
   to {
-    left: 100%
+    left: 100%;
   }
 }
-
-
-/* Welcome page */
-
-.welcome-page-div{
-  width: 700px;
-  height:350px;
-  background-color: rgb(248,184,96) ;
-  border: 3px solid rgb(141,73,38);
-  border-radius: 20px;
-  position: relative;
-}
-
-.welcome-page-heading{
-  font-size: 70px;
-  padding: 80px;
-  padding-bottom: 50px;
-}
-
-.name-label {
-  font-size: 20px;
-}
-
-.name-input{
-  margin-top: 40px;
-  width: 250px;
-  height: 50px;
-  border: 2px solid;
-  border-radius: 10px;
-  caret-color: red;
-  font-family: 'Press Start 2P', cursive;
-}
-
-.name-input:focus{
-  font-family: 'Press Start 2P', cursive;
-}
-
-.button-style{
-  background-color: rgb(141,73,38);
-  font-family: 'Press Start 2P', cursive;
-  width: 180px;
-  height: 50px;
-  position: absolute;
-  left: 230px;
-  top: 350px;
-  border-radius: 20px;
-  border: 3px solid (141,73,38);
-}
-
-.toad{
-  width: 90px;
-  position: absolute;
-  top: 360px;
-  left: 410px;
-  z-index: -1000;
-}
-
-.toad1{
-  width: 90px;
-  position: absolute;
-  top: 360px;
-  left: 190px;
-  z-index: -1000;
-}
-
-/* Question pages */
-
-
-/* The End page */
 
 .sad-mario {
   background-image: url(../src/images/sad-mario.png);
@@ -469,10 +309,140 @@ ul {
   }
 }
 
-/* THE END PAGE */
+/* Welcome page */
 
+.welcome-page-div {
+  display: flex;
+  flex-direction: column;
+}
 
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  background-color: var(--beige);
+  border: 4px solid var(--light-brown);
+  border-radius: 10px;
+  margin: 0 auto;
+  height: 50vh;
+  width: 50vw;
+  margin-bottom: 60px;
+}
 
+.welcome-page-heading {
+  font-size: 50px;
+}
 
+.name-label {
+  font-size: 20px;
+}
 
-/* THE END PAGE */
+.name-input {
+  width: 250px;
+  height: 50px;
+  border: 2px solid;
+  border-radius: 10px;
+  caret-color: var(--negative-color);
+  font-family: 'Press Start 2P', cursive;
+}
+
+.name-input:focus {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.start {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.button-style-start {
+  background-color: #f8b860;
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+  padding: 1.2rem 2.4rem;
+  border-radius: 20px;
+  border: 3px solid (141, 73, 38);
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.button-style-start:hover {
+  color: var(--white);
+  transform: scale(1.02);
+  background-color: var(--light-brown);
+}
+
+.toads {
+  width: 100px;
+}
+
+.toad1 {
+  order: -1;
+}
+
+/* THE Final PAGE */
+
+.final-page-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  background-color: var(--beige);
+  border: 4px solid var(--light-brown);
+  border-radius: 10px;
+  margin: 0 auto;
+  height: 50vh;
+  width: 50vw;
+  margin-bottom: 60px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  line-height: 30px;
+}
+
+.newgame-button-style {
+  background-color: #f8b860;
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+  border-radius: 20px;
+  border: 3px solid (141, 73, 38);
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.newgame-button-style:hover {
+  color: var(--white);
+  transform: scale(1.02);
+  background-color: var(--light-brown);
+}
+
+.gif-style {
+  width: 80px;
+}
+
+@keyframes move-left {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+/* img srcs do not work properly needs to be checked */
+
+.moving-text {
+  position: absolute;
+  margin-top: 30px;
+  right: -80%;
+  animation: move-left 5s linear 1s infinite running;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.avatars {
+  width: 30px;
+}
