@@ -23,7 +23,10 @@ const createProgressBarElement = () => {
   divBar.innerHTML = String.raw`<div id="${PROGRESS_BAR_ID}"></div>`;
 
   // append the div element to the body
-  document.body.appendChild(divBar);
+
+  // I commented out the following line since it was added in the wrong spot. How might 
+  // you modify progressBar.js so you don't need to create the div here?
+  // document.body.appendChild(divBar);
 };
 
 export const initQuestionPage = () => {
