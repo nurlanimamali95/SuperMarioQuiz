@@ -11,9 +11,8 @@ import { changeProgress, createProgressBarElement} from '../views/progressBar.js
 import { showFinalPage } from './finalPage.js';
 import { showInformation } from '../views/informationViev.js';
 
-const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
 export const initQuestionPage = () => {
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const existingProgressBar = document.getElementById(PROGRESS_BAR_ID); // moved the existing logic that existed in progressBar.js for added readability 
   if (!existingProgressBar) { 
   const progressElement = createProgressBarElement(); // create progress bar elements if they don't already exist
