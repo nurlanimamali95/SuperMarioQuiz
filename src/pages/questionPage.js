@@ -61,7 +61,7 @@ export const initQuestionPage = () => {
   .setAttribute('disabled', true)
 
   
-  const currentBar = changeProgress((quizData.currentQuestionIndex * 10)+10); // Progressbar line
+  // const currentBar = changeProgress((quizData.currentQuestionIndex * 10)+10); // Progressbar line
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
