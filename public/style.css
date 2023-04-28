@@ -240,7 +240,7 @@ ul {
   position: absolute;
   top: -28px;
   right: -45px;
-  background-image: url("/browser-quiz-project-starter/public/pngimg.com\ -\ mario_PNG72.png");
+  background-image: url("../public/mario_run.gif");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -258,7 +258,7 @@ ul {
 }
 
 .house {
-  background-image: url('./image\ \(1\).png');
+  background-image: url('../public/castle.png');
   background-size: cover;
   width: 100px;
   height: 100px;
@@ -347,7 +347,7 @@ ul {
 }
 
 .happy-mario {
-  background-image: url(./src/images/happy-mario.png);
+  background-image: url(../src/images/happy-mario.png);
   background-size: cover;
   rotate: 90deg;
   width: 150px;
@@ -443,7 +443,7 @@ ul {
 /* The End page */
 
 .sad-mario {
-  background-image: url(./src/images/sad-mario.png);
+  background-image: url(../src/images/sad-mario.png);
   background-size: cover;
   width: 200px;
   height: 230px;
