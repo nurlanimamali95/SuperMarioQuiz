@@ -14,9 +14,12 @@ import { showInformation } from '../views/informationViev.js';
 const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
 export const initQuestionPage = () => {
+  const existingProgressBar = document.getElementById(PROGRESS_BAR_ID); // moved the existing logic that existed in progressBar.js for added readability 
+  if (!existingProgressBar) { 
+  const progressElement = createProgressBarElement(); // create progress bar elements if they don't already exist
+  document.body.prepend(progressElement); // prepend them to the body, outside of userInterface which is cleared and rewritten everytime the next button is clicked
+  }
 
-  createProgressBarElement();
-  
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
  
@@ -68,14 +71,15 @@ const selectAnswer = (event) => {
     quizData.answerSelected = true;
 
     if (userAnswer === correctAnswerKey) {
-     selectedListItem.classList.add('yes')
-     quizData.score+=10
-     happyMario.classList.add('hello-happy-mario')
+     selectedListItem.classList.add('yes');
+     quizData.score+=10;
+     updateScoreInProgressBar();
+     happyMario.classList.add('hello-happy-mario');
     } else {
-     selectedListItem.classList.add('no')
-     sadMario.classList.add('hello-sad-mario')
+     selectedListItem.classList.add('no');
+     sadMario.classList.add('hello-sad-mario');
      
-     showCorrectAnswer()
+     showCorrectAnswer();
 
      const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
@@ -101,6 +105,10 @@ const showCorrectAnswer = () => {
   });
 };
 
+const updateScoreInProgressBar = () => {
+  const scoreNumElement = document.getElementById('score');
+  scoreNumElement.textContent = quizData.score;
+}
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 

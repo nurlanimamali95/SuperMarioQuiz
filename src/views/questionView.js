@@ -20,13 +20,7 @@ export const createQuestionElement = (question, questionCounter, imageUrl) => {
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
   
-    <div class="status-bar">
-    <h3>${questionCounter}/10</h3>  
-    <div class="points-container">
-      <div class="house"></div>
-      <div class="points">${100}</div>
-    </div>
-    </div>
+  
     <div class="main-container">
       <div class="question-image-container">
 
