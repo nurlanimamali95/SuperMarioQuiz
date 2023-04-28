@@ -190,9 +190,6 @@ li:hover {
 }
 
 
-
-
-
 /* basic styles for Input name */
 
 .name-input {
@@ -293,6 +290,7 @@ li:hover {
 .question-image {
   border-radius: 4px;
   animation: image-slide .3s ease-in-out both;
+  border: 4px solid var(--dark-brown)
 }
 
 @keyframes image-slide {
@@ -332,7 +330,8 @@ li:hover {
   border: 8px solid var(--positive-color);
   border-radius: 6px;
   padding: 1rem;
-  
+  max-height: 24rem;
+  overflow: auto;
   animation: animate  .7s ease-in-out both;
   }
 
@@ -379,9 +378,8 @@ li:hover {
   width: 200px;
   height: 230px;
   z-index: 2;
-  position: fixed;
   display: none;
-  bottom: -50%;
+
 }
 
 .hello-sad-mario {
@@ -396,7 +394,7 @@ li:hover {
     opacity: 0.5;
   }
   to {
-    bottom: -16%;
+    bottom: -18%;
     opacity: 1;
   }
 }
@@ -478,20 +476,25 @@ li:hover {
     justify-content: space-between;
     padding: 2rem;
     width: 80vw;
-    height: 60vh;
+    min-height: 50vh;
   }
 
   .question-image-container {
-  max-width: 90%;
-  padding: 1.5rem;
-  margin-top: 4rem;
-  gap: 5rem;
+    max-width: 90%;
+    padding: 1.5rem;
+    margin-top: 4rem;
+    gap: 5rem;
+    flex-grow: 1;
  
   }
 
   .hint {
     border: 4px solid var(--positive-color);
     padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   ul {
@@ -513,4 +516,29 @@ li:hover {
   .sad-mario {
     display: none;
   }
+
+  .next-button {
+    margin-top: 5rem;
+  }
+}
+
+@media  (max-width: 720px) {
+ html {
+  font-size: 10px;
+ }
+
+ ul {
+  margin-bottom: 4rem;
+}
+
+.question-image-container {
+  margin-top: 2rem;
+}
+
+ .main-container {
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 88vw;
+}
 }
