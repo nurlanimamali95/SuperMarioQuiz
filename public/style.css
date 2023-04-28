@@ -401,6 +401,7 @@ ul {
   font-size: 20px;
   letter-spacing: 2px;
   line-height: 30px;
+  padding: 15px;
 }
 
 .newgame-button-style {
@@ -436,13 +437,13 @@ ul {
 
 .moving-text {
   position: absolute;
-  margin-top: 30px;
-  right: -80%;
+  margin-top: 20px;
+  right: 0;
   animation: move-left 5s linear 1s infinite running;
   font-size: 10px;
   white-space: nowrap;
 }
 
-.avatars {
-  width: 30px;
+.avatar {
+  width: 15px;
 }
