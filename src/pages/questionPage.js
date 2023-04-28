@@ -109,10 +109,10 @@ const updateQuestionNumInProgressBar = () => {
 }
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-  updateQuestionNumInProgressBar();
   if (quizData.currentQuestionIndex === quizData.questions.length) {
    showFinalPage()
   } else {
+    updateQuestionNumInProgressBar();
     initQuestionPage();
   }
 };

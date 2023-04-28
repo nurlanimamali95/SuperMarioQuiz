@@ -70,5 +70,8 @@ const startNewGame = () => {
   // Reset the quiz data and start a new game
   quizData.currentQuestionIndex = 0;
   quizData.score = 0;
+  // set the progress in the progress bar back to 1
+  const questionNumElement = document.getElementById('questionNum'); 
+  questionNumElement.textContent = 1;
   initQuestionPage();
 };
