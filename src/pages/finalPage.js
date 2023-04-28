@@ -51,13 +51,13 @@ export const showFinalPage = () => {
   superMarioTeam.classList.add("moving-text")
 
   const avatar1 = document.createElement("img")
-  avatar1.src = ".\src\images\nurlan.gif"
+  avatar1.src = "./src/images/nurlan.gif"
   avatar1.classList.add("avatar");
   const avatar2 = document.createElement("img")
-  avatar2.src = ".\src\images\anastasia.gif"
+  avatar2.src = "./src/images/anastasia.gif"
   avatar2.classList.add("avatar");
   const avatar3 = document.createElement("img")
-  avatar3.src = ".\src\images\evghen.gif"
+  avatar3.src = "./src/images/evghen.gif"
   avatar3.classList.add("avatar");
 
   userInterface.appendChild(superMarioTeam)
