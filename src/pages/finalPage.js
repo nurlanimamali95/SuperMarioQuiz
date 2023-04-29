@@ -40,7 +40,7 @@ export const showFinalPage = () => {
   newGameButton.classList.add('newgame-button-style');
   newGameButton.innerText = 'New Game';
   newGameButton.addEventListener('click', startNewGame);
-  newGameButton.classList.add('button-style');
+  // newGameButton.classList.add('button-style');
 
   userInterface.appendChild(finalMessage);
   userInterface.appendChild(newGameButton);
