@@ -10,6 +10,7 @@ import { quizData } from '../data.js';
 import { changeProgress, createProgressBarElement} from '../views/progressBar.js';
 import { showFinalPage } from './finalPage.js';
 import { showInformation } from '../views/informationViev.js';
+import { changeScore } from '../views/progressBar.js';
 
 export const initQuestionPage = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
@@ -76,6 +77,7 @@ const selectAnswer = (event) => {
      selectedListItem.classList.add('yes');
      quizData.score+=10;
      happyMario.classList.add('hello-happy-mario');
+     changeScore(quizData.score)
     } else {
      selectedListItem.classList.add('no');
      sadMario.classList.add('hello-sad-mario');
