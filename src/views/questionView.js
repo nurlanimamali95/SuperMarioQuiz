@@ -14,7 +14,7 @@ export const createQuestionElement = (question, questionCounter, imageUrl) => {
 
   let imageElement = '';
   if (quizData.questions[quizData.currentQuestionIndex].image) {
-    imageElement = `<img src="${quizData.questions[quizData.currentQuestionIndex].image}" width="200">`;
+    imageElement = `<img class="question-image" src="${quizData.questions[quizData.currentQuestionIndex].image}" width="200">`;
   }
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
@@ -31,7 +31,7 @@ export const createQuestionElement = (question, questionCounter, imageUrl) => {
     </ul>
     <div class="happy-mario"></div>
     </div>
-    <button id="${NEXT_QUESTION_BUTTON_ID}">
+    <button class="next-button" id="${NEXT_QUESTION_BUTTON_ID}">
       Next question
     </button>
     <div class="sad-mario"></div>

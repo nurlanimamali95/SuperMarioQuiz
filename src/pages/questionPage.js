@@ -44,6 +44,9 @@ export const initQuestionPage = () => {
   .getElementById(NEXT_QUESTION_BUTTON_ID)
   .setAttribute('disabled', true)
 
+  document
+  .getElementById(NEXT_QUESTION_BUTTON_ID)
+  .classList.add('button-disabled')
   
   changeProgress(currentQuestion) // Progressbar line
 
@@ -77,7 +80,14 @@ const selectAnswer = (event) => {
      selectedListItem.classList.add('no');
      sadMario.classList.add('hello-sad-mario');
      
-     showCorrectAnswer();
+     showCorrectAnswer()
+      
+     const questionElement = document.querySelector('.question');
+     questionElement.style.display = 'none';
+     const imageElement = document.querySelector('.question-image');
+     if (imageElement) {
+      imageElement.style.display = 'none';
+    }
 
      const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
@@ -87,6 +97,9 @@ const selectAnswer = (event) => {
     document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .removeAttribute('disabled')
+    document
+    .getElementById(NEXT_QUESTION_BUTTON_ID)
+    .classList.remove('button-disabled')
   
 };
 

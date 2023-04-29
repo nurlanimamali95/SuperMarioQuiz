@@ -11,9 +11,10 @@ export const showInformation = (text) => {
         return question.info;}
       }).join(' ');
       
-   
+    const questionImageContainer = document.querySelector('.question-image-container');
     const informationView = document.createElement('div');
+    informationView.classList.add('hint');
   
        informationView.innerText = `${infoArray}`;
-       answersListElement.appendChild(informationView);
+       questionImageContainer.appendChild(informationView);
   }
