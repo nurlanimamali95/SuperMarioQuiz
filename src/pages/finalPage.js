@@ -72,7 +72,9 @@ export const showFinalPage = () => {
 const startNewGame = () => {
   // Reset the quiz data and start a new game
   quizData.currentQuestionIndex = 0;
-  const updateScore = document.getElementById(PROGRESS_SCORE); 
+  quizData.score = 0;
+  const updateScore = document.getElementById(PROGRESS_SCORE);
+  updateScore.style.color = 'red';
   updateScore.textContent = 0;
   // set the progress in the progress bar back to 1
   const questionNumElement = document.getElementById('questionNum');
