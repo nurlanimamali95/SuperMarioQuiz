@@ -7,9 +7,10 @@ export const showInformation = (text) => {
     // const questionTexts = quizData.questions.map(question => question.info).join(' ');
 
     const infoArray = quizData.questions.map((question) => {
-        if (text===question.text) {
-        return question.info;}
-      }).join(' ');
+      if (question.text.includes(text)) {
+          return question.info;
+      }
+  }).join(' ');
       
     const questionImageContainer = document.querySelector('.question-image-container');
     const informationView = document.createElement('div');
