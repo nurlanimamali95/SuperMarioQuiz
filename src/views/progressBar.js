@@ -33,7 +33,7 @@ export const changeScore = (score) => {
       </div>
       <div class="points-container">
         <div class="house"></div>
-        <div class="points" id="${PROGRESS_SCORE}">SCORE:</div>
+        <div class="points" id="${PROGRESS_SCORE}">0</div>
       </div>
       </div>`;
       //document.body.prepend(element);

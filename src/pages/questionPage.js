@@ -93,7 +93,7 @@ const selectAnswer = (event) => {
 
      const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
-     showInformation(currentQuestion.text)
+     showInformation(currentQuestion)
     }
     
     document
