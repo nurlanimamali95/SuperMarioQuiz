@@ -58,12 +58,15 @@ export const showFinalPage = () => {
   const avatar3 = document.createElement('img');
   avatar3.src = './src/images/evghen.gif';
   avatar3.classList.add('avatar');
-
+  const avatar4 = document.createElement('img');
+  avatar4.src = './src/images/Rayna_Ney.gif';
+  avatar4.classList.add('avatar');
 
   userInterface.appendChild(superMarioTeam);
   superMarioTeam.appendChild(avatar1);
   superMarioTeam.appendChild(avatar2);
   superMarioTeam.appendChild(avatar3);
+  superMarioTeam.appendChild(avatar4);
 };
 
 const startNewGame = () => {
@@ -71,7 +74,7 @@ const startNewGame = () => {
   quizData.currentQuestionIndex = 0;
   quizData.score = 0;
   // set the progress in the progress bar back to 1
-  const questionNumElement = document.getElementById('questionNum'); 
+  const questionNumElement = document.getElementById('questionNum');
   questionNumElement.textContent = 1;
   initQuestionPage();
 };
