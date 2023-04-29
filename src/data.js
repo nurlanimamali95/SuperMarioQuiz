@@ -125,7 +125,7 @@ export const quizData = {
       info: 'The biggest fish in the ocean is the whale shark, also known as Rhincodon typus. Despite their tremendous size and intimidating appearance, whale sharks are commonly docile and approachable.',
     },
     {
-      text: 'Which country`s flag do you see in the picture?',
+      text: 'What country does this flag belong to?',
       answers: {
         a: 'Bermuda Islands',
         b: 'S.Georgia and S.S.Islands',

@@ -11,6 +11,7 @@ export const changeProgress = (progress) => {
 export const changeScore = (score) => {
   const progressScore = document.getElementById(PROGRESS_SCORE)
   //change color
+
   if (score<30) {
     progressScore.style.color = 'red';
   } else if (quizData.score >= 30 && quizData.score <= 70) {

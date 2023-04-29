@@ -91,9 +91,7 @@ const selectAnswer = (event) => {
       imageElement.style.display = 'none';
     }
 
-     const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
-     showInformation(currentQuestion.text)
+     showInformation(quizData.currentQuestionIndex)
     }
     
     document
