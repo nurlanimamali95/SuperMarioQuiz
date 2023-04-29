@@ -1,17 +1,14 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap');
 
 :root {
-  --background-color: #FADAB4;
+  --background-color: #fadab4;
   --white: #fff7ed;
-  --beige: #F8B860;
-  --light-brown: #8D4926;
+  --beige: #f8b860;
+  --light-brown: #8d4926;
   --dark-brown: #412010;
   --secondary-color: #6c757d;
   --positive-color: #3fae48;
   --negative-color: #E50014;
-
-
 }
 
 * {
@@ -48,7 +45,6 @@ ul {
   gap: 1rem;
   cursor: pointer;
   list-style: none;
-  
 }
 
 li {
@@ -71,14 +67,15 @@ li:hover {
   /* border-color: var(--white); */
 }
 
-.button-style{
+
+.button-style {
   background-color: var(--light-brown);
   font-family: 'Press Start 2P', cursive;
   margin-top: 50px;
   width: 180px;
   height: 50px;
   border-radius: 10px;
-  border: 3px solid (141,73,38);
+  border: 3px solid (141, 73, 38);
 }
 
 .next-button {
@@ -88,11 +85,10 @@ li:hover {
   font-size: clamp(0.5rem, 0.3333rem + 0.7619vw, 1rem);
   padding: 1.2rem 2.4rem;
   border-radius: 20px;
-  border: 3px solid (141,73,38);
+  border: 3px solid (141, 73, 38);
   margin-top: 2rem;
   cursor: pointer;
   margin-bottom: 2rem;
-  
 }
 
 .next-button:hover {
@@ -169,7 +165,7 @@ li:hover {
 
 /* QUESTION PAGE */
 .status-bar {
-  
+  align-self: start; /*this line moves the div from the middle to the top of the page */
   display: flex;
   width: 68vw;
   margin: 0 auto;
@@ -191,7 +187,6 @@ li:hover {
   overflow: auto;
 }
 
-
 /* basic styles for Input name */
 
 .name-input {
@@ -208,7 +203,7 @@ li:hover {
   display: block;
   margin-top: 2em;
   margin-left: 2em;
-}
+ }
 
 * {
   box-sizing: border-box;
@@ -235,26 +230,28 @@ li:hover {
 
 /* MARIO PROGRESS */
 .progress-container #progress::after {
-  content: "";
+  content: '';
   display: block;
   width: 50px;
   height: 50px;
   position: absolute;
   top: -28px;
   right: -45px;
-  background-image: url("../public/mario_run.gif");
+  background-image: url('../public/mario_run.gif');
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-/* Question Page */
+
+/* ===== Question Page ==== */
+
 /* Status bar */
 .points-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
 }
-
 
 .points {
   margin-bottom: 2.2rem;
@@ -313,7 +310,7 @@ li:hover {
   letter-spacing: .3rem;
   line-height: 2.2rem;
   animation: animate .5s ease-in-out both;
-}
+ }
 
 @keyframes animate {
   0% {
@@ -344,7 +341,7 @@ li:hover {
 }
 
 .no {
-  background-color: var(--negative-color)
+  background-color: var(--negative-color);
 }
 
 /* Mario pop-up  */
@@ -358,7 +355,6 @@ li:hover {
   position: absolute;
   z-index: -1;
   display: none;
-  
 }
 
 .hello-happy-mario {
@@ -376,6 +372,7 @@ li:hover {
     opacity: 1;
   }
 }
+
 .sad-mario {
   background-image: url(../src/images/sad-mario.png);
   background-size: cover;
@@ -383,8 +380,20 @@ li:hover {
   height: 230px;
   z-index: 2;
   display: none;
-
 }
+
+/* 
+.sad-mario {
+  background-image: url(../src/images/sad-mario.png);
+  background-size: cover;
+  width: 200px;
+  height: 230px;
+  z-index: 2;
+  position: fixed;
+  display: none;
+  bottom: -50%;
+}
+*/
 
 .hello-sad-mario {
   animation: move-up 1s forwards;
@@ -405,66 +414,78 @@ li:hover {
 
 /* Welcome page */
 
-.welcome-page-div{
-  width: 700px;
-  height:350px;
-  background-color: rgb(248,184,96) ;
-  border: 3px solid rgb(141,73,38);
-  border-radius: 20px;
-  position: relative;
+.welcome-page-div {
+  display: flex;
+  flex-direction: column;
 }
 
-.welcome-page-heading{
-  font-size: 70px;
-  padding: 80px;
-  padding-bottom: 50px;
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  background-color: var(--beige);
+  border: 4px solid var(--light-brown);
+  border-radius: 10px;
+  margin: 0 auto;
+  height: 50vh;
+  width: 50vw;
+  margin-bottom: 60px;
+}
+
+.welcome-page-heading {
+  font-size: 50px;
 }
 
 .name-label {
   font-size: 20px;
 }
 
-.name-input{
-  margin-top: 40px;
+.name-input {
   width: 250px;
   height: 50px;
   border: 2px solid;
   border-radius: 10px;
-  caret-color: red;
+  caret-color: var(--negative-color);
   font-family: 'Press Start 2P', cursive;
 }
 
-.name-input:focus{
+.name-input:focus {
   font-family: 'Press Start 2P', cursive;
 }
 
-.button-style{
-  background-color: rgb(141,73,38);
+.start {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.button-style-start {
+  background-color: #f8b860;
+  box-sizing: border-box;
   font-family: 'Press Start 2P', cursive;
-  width: 180px;
-  height: 50px;
-  position: absolute;
-  left: 230px;
-  top: 350px;
+  padding: 1.2rem 2.4rem;
   border-radius: 20px;
-  border: 3px solid (141,73,38);
+  border: 3px solid (141, 73, 38);
+  margin-top: 2rem;
+  cursor: pointer;
 }
 
-.toad{
-  width: 90px;
-  position: absolute;
-  top: 360px;
-  left: 410px;
-  z-index: -1000;
+.button-style-start:hover {
+  color: var(--white);
+  transform: scale(1.02);
+  background-color: var(--light-brown);
 }
 
-.toad1{
-  width: 90px;
-  position: absolute;
-  top: 360px;
-  left: 190px;
-  z-index: -1000;
+.toads {
+  width: 100px;
 }
+
+.toad1 {
+  order: -1;
+}
+
 
 /* Media queries */
 
@@ -512,6 +533,54 @@ li:hover {
     min-width: 13rem;
     padding: 1.2rem 2.2rem;
     text-align: center;
+
+/* THE Final PAGE */
+
+.final-page-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  background-color: var(--beige);
+  border: 4px solid var(--light-brown);
+  border-radius: 10px;
+  margin: 0 auto;
+  height: 50vh;
+  width: 50vw;
+  margin-bottom: 60px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  line-height: 30px;
+  padding: 15px;
+}
+
+.newgame-button-style {
+  background-color: #f8b860;
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+  border-radius: 20px;
+  border: 3px solid (141, 73, 38);
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.newgame-button-style:hover {
+  color: var(--white);
+  transform: scale(1.02);
+  background-color: var(--light-brown);
+}
+
+.gif-style {
+  width: 80px;
+}
+
+@keyframes move-left {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 100%;
   }
 
   .happy-mario {
@@ -545,4 +614,18 @@ li:hover {
   padding: 1rem;
   width: 88vw;
 }
+
+/* img srcs do not work properly needs to be checked */
+
+.moving-text {
+  position: absolute;
+  margin-top: 20px;
+  right: 0;
+  animation: move-left 5s linear 1s infinite running;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.avatar {
+  width: 15px;
 }
