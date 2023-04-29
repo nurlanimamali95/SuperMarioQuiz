@@ -198,10 +198,10 @@ li:hover {
 }
 
 .house {
-  background-image: url('../src/images/castle.png');
+  background-image: url(../src/images/castle.png);
   background-size: cover;
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
 }
 
 /* Main Container */
