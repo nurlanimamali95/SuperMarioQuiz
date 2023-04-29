@@ -28,15 +28,15 @@ body {
   font-size: 16px;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+#user-interface {
+  z-index: 0;
 }
 
 ul {
@@ -104,64 +104,6 @@ li:hover {
   color: #B18648;
 }
 
-/* WELCOME PAGE  */
-
-.welcome-page-div{
-  display: flex;
-  flex-direction: column;
-  /* align-items: center;
-  justify-content: space-around;
-  margin: 0 auto;
-  width: 700px;
-  height:350px;
-  background-color: var(--beige) ;
-  border: 3px solid var(--light-brown);
-  border-radius: 20px; */
-}
-
-.welcome-page-heading{
-  font-size: 70px;
-}
-
-.name-label {
-  font-size: 20px;
-}
-
-.name-input{
-  width: 250px;
-  height: 50px;
-  border: 2px solid;
-  border-radius: 10px;
-  caret-color: var(--negative-color);
-  font-family: 'Press Start 2P', cursive;
-}
-
-.name-input:focus{
-  font-family: 'Press Start 2P', cursive;
-}
-
-.button-div{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.toad{
-  order: -1;
-  width: 120px;
-  z-index: -1000;
-  margin-right: -35px;
-  margin-top: 30px;
-}
-
-/* One of the toads has to be flipped horizontally */
-
-.toad1{
-  width: 120px;
-  z-index: -1000;
-  margin-left: -35px;
-  margin-top: 30px;
-}
 
 /* QUESTION PAGE */
 .status-bar {
@@ -170,15 +112,12 @@ li:hover {
   width: 68vw;
   margin: 0 auto;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  text-align: center; 
+  width: 60%;
 }
 
 .scrollable {
@@ -237,9 +176,10 @@ li:hover {
   position: absolute;
   top: -28px;
   right: -45px;
-  background-image: url('../public/mario_run.gif');
+  background-image: url('../src/images/mario_run.gif');
   background-size: contain;
   background-repeat: no-repeat;
+  margin-right: 2rem;
 }
 
 
@@ -258,10 +198,10 @@ li:hover {
 }
 
 .house {
-  background-image: url('../src/images/castle.png');
+  background-image: url(../src/images/castle.png);
   background-size: cover;
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
 }
 
 /* Main Container */
@@ -330,7 +270,7 @@ li:hover {
   border: 4px solid var(--positive-color);
   border-radius: 6px;
   padding: 1rem;
-  max-height: 20ch;
+  max-height: 30ch;
   overflow: auto;
   animation: animate  .7s ease-in-out both;
   font-size: clamp(0.5rem, 0.3333rem + 0.7619vw, 1rem);
@@ -346,54 +286,43 @@ li:hover {
 
 /* Mario pop-up  */
 .happy-mario {
-  background-image: url(../src/images/happy-mario.png);
+  background-image: url('../src/images/happy-mario.png');
   background-size: cover;
   rotate: 90deg;
   width: 150px;
   height: 150px;
   left: 80%;
   position: absolute;
-  z-index: -1;
   display: none;
 }
 
 .hello-happy-mario {
   animation: move-right 1s forwards;
   display: block;
+  z-index: -1;
 }
-
 @keyframes move-right {
   from {
-    left: 80%;
+    left: 70%;
     opacity: 0.5;
   }
   to {
-    left: 100%;
+    left: 80%;
     opacity: 1;
   }
 }
 
 .sad-mario {
-  background-image: url(../src/images/sad-mario.png);
+  background-image: url('../src/images/sad-mario.png');
   background-size: cover;
   width: 200px;
   height: 230px;
-  z-index: 2;
+  /* z-index: ; */
   display: none;
+  left: 5rem;
 }
 
-/* 
-.sad-mario {
-  background-image: url(../src/images/sad-mario.png);
-  background-size: cover;
-  width: 200px;
-  height: 230px;
-  z-index: 2;
-  position: fixed;
-  display: none;
-  bottom: -50%;
-}
-*/
+
 
 .hello-sad-mario {
   animation: move-up 1s forwards;
@@ -407,7 +336,7 @@ li:hover {
     opacity: 0.5;
   }
   to {
-    bottom: -7%;
+    bottom: 0%;
     opacity: 1;
   }
 }
@@ -435,11 +364,11 @@ li:hover {
 }
 
 .welcome-page-heading {
-  font-size: 50px;
+  font-size: 3.15rem;
 }
 
 .name-label {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .name-input {
@@ -462,6 +391,7 @@ li:hover {
 }
 
 .button-style-start {
+  font-size: clamp(0.5rem, 0.3333rem + 0.7619vw, 1rem);
   background-color: #f8b860;
   box-sizing: border-box;
   font-family: 'Press Start 2P', cursive;
@@ -505,6 +435,10 @@ li:hover {
     min-height: 50vh;
   }
 
+  .centered {
+    width: auto;
+  }
+
   .question-image-container {
     max-width: 90%;
     padding: 1.5rem;
@@ -546,6 +480,13 @@ li:hover {
   .next-button {
     margin-top: 5rem;
   }
+  
+  .welcome-section {
+    width: 80vw;
+  }
+  .final-page-div {
+    width: 80vw;
+  }
 }
 
 @media  (max-width: 720px) {
@@ -559,6 +500,7 @@ li:hover {
 
     .question-image-container {
     margin-top: 2rem;
+    gap: 1.2rem;
     }
 
     .main-container {
@@ -567,8 +509,12 @@ li:hover {
     padding: 1rem;
     width: 88vw;
     }
+
+    .house {
+      width: 50px;
+      height: 50px;
+    }
 }
-/* img srcs do not work properly needs to be checked */
 /* THE Final PAGE */
 
 .final-page-div {
@@ -583,14 +529,15 @@ li:hover {
   margin: 0 auto;
   height: 50vh;
   width: 50vw;
-  margin-bottom: 60px;
-  font-size: 20px;
+  margin-bottom: 3.75rem;
+  font-size: 1.3rem;
   letter-spacing: 2px;
   line-height: 30px;
   padding: 15px;
 }
 
 .newgame-button-style {
+  font-size: clamp(0.5rem, 0.3333rem + 0.7619vw, 1rem);
   background-color: #f8b860;
   box-sizing: border-box;
   font-family: 'Press Start 2P', cursive;
@@ -616,7 +563,7 @@ li:hover {
   margin-top: 20px;
   right: 0;
   animation: move-left 5s linear 1s infinite running;
-  font-size: 10px;
+  font-size: .8rem;
   white-space: nowrap;
 }
 
