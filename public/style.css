@@ -35,6 +35,10 @@ body {
   flex-direction: column;
 }
 
+#user-interface {
+  z-index: 0;
+}
+
 ul {
   display: flex;
   flex-direction: column;
@@ -172,9 +176,10 @@ li:hover {
   position: absolute;
   top: -28px;
   right: -45px;
-  background-image: url('../public/mario_run.gif');
+  background-image: url('../src/images/mario_run.gif');
   background-size: contain;
   background-repeat: no-repeat;
+  margin-right: 2rem;
 }
 
 
@@ -281,37 +286,34 @@ li:hover {
 
 /* Mario pop-up  */
 .happy-mario {
-  background-image: url(../src/images/happy-mario.png);
+  background-image: url('../src/images/happy-mario.png');
   background-size: cover;
   rotate: 90deg;
   width: 150px;
   height: 150px;
-  left: 50%;
+  left: 80%;
   position: absolute;
-  z-index: -1;
   display: none;
 }
 
 .hello-happy-mario {
   animation: move-right 3s forwards;
   display: block;
+  z-index: -1;
 }
-
 @keyframes move-right {
   from {
     left: 70%;
     opacity: 0.5;
-    /* z-index: -1; */
   }
   to {
     left: 80%;
     opacity: 1;
-    z-index: -1;
   }
 }
 
 .sad-mario {
-  background-image: url(../src/images/sad-mario.png);
+  background-image: url('../src/images/sad-mario.png');
   background-size: cover;
   width: 200px;
   height: 230px;
