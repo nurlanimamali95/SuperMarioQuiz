@@ -1,4 +1,4 @@
-import { USER_INTERFACE_ID } from '../constants.js';
+import { PROGRESS_SCORE, USER_INTERFACE_ID } from '../constants.js';
 import { quizData } from '../data.js';
 import { getUserName } from './welcomePage.js';
 import { initQuestionPage } from './questionPage.js';
@@ -72,7 +72,8 @@ export const showFinalPage = () => {
 const startNewGame = () => {
   // Reset the quiz data and start a new game
   quizData.currentQuestionIndex = 0;
-  quizData.score = 0;
+  const updateScore = document.getElementById(PROGRESS_SCORE); 
+  updateScore.textContent = 0;
   // set the progress in the progress bar back to 1
   const questionNumElement = document.getElementById('questionNum');
   questionNumElement.textContent = 1;

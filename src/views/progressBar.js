@@ -1,5 +1,6 @@
 import {PROGRESS_BAR_ID} from '../constants.js'
 import { quizData } from '../data.js';
+import { PROGRESS_SCORE } from '../constants.js';
 
 // function progressBar line
 export const changeProgress = (progress) => {
@@ -7,6 +8,21 @@ export const changeProgress = (progress) => {
   const progressbar = document.getElementById(PROGRESS_BAR_ID)
   progressbar.style.width = `${progress}%`;
 };
+export const changeScore = (score) => {
+  const progressScore = document.getElementById(PROGRESS_SCORE)
+  //change color
+
+  if (score<30) {
+    progressScore.style.color = 'red';
+  } else if (quizData.score >= 30 && quizData.score <= 70) {
+    progressScore.style.color = 'black';
+  }
+ else {
+  progressScore.style.color = 'green';
+ }
+  progressScore.textContent = `${score}`;
+};
+
 
   export const createProgressBarElement = () => {
     const element = document.createElement('div');
@@ -18,10 +34,9 @@ export const changeProgress = (progress) => {
       </div>
       <div class="points-container">
         <div class="house"></div>
-        <div class="points">${100}</div>
+        <div class="points" id="${PROGRESS_SCORE}">0</div>
       </div>
-      </div>
-      `;
+      </div>`;
       //document.body.prepend(element);
     return element;
   };
