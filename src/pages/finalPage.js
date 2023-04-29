@@ -19,19 +19,19 @@ export const showFinalPage = () => {
     finalMessage.innerText = `Better luck next time, ${userName}. You earned ${quizData.score} points out of ${totalPoints} possible`;
     const gif = document.createElement('img');
     gif.classList.add('gif-style');
-    gif.src = '../src/images/notgood.gif';
+    gif.src = './src/images/notgood.gif';
     finalMessage.appendChild(gif);
   } else if (quizData.score >= 30 && quizData.score <= 70) {
     finalMessage.innerText = `Good job, ${userName}! You earned ${quizData.score} points out of ${totalPoints} possible points.`;
     const gif = document.createElement('img');
     gif.classList.add('gif-style');
-    gif.src = '../src/images/good.gif';
+    gif.src = './src/images/good.gif';
     finalMessage.appendChild(gif);
   } else {
     finalMessage.innerText = `Well done, ${userName}! You earned ${quizData.score} points out of ${totalPoints} possible points.`;
     const gif = document.createElement('img');
     gif.classList.add('gif-style');
-    gif.src = '../src/images/verygood.gif';
+    gif.src = './src/images/verygood.gif';
     finalMessage.appendChild(gif);
   }
 
