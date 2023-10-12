@@ -1,4 +1,4 @@
-# Super Mario Geography Quiz
+# RetroWorldQuiz
 
 ![Super Mario Geography Quiz Logo](./src/images/mariohappy.png)
 
