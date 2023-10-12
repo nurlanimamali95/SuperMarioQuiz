@@ -38,6 +38,6 @@ Super Mario Geography Quiz is a captivating web application that tests your know
 
 ## Try the Demo
 
-Check out our [Super Mario Geography Quiz Demo](https://www.supermarioquiz.com/demo) to experience the game before you play!
+Check out our [Super Mario Geography Quiz Demo](https://nurlanimamali95.github.io/SuperMarioQuiz/) to experience the game!
 
 Thank you for choosing Super Mario Geography Quiz. We hope you have a fantastic time learning about countries and exploring the world in true Super Mario style, while watching Mario get closer to the castle with every correct answer!
